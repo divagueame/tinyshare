@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>User uploads</h1>
+
+<div id="user_uploads">
+  <% @user_uploads.each do |user_upload| %>
+    <%= render user_upload %>
+  <% end %>
+</div>
+
+<%= link_to "New upload", new_user_upload_path %>

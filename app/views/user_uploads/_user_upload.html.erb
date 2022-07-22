@@ -1,0 +1,6 @@
+<div id="<%= dom_id user_upload %>">
+  <%= link_to rails_blob_path(user_upload.user_file, disposition: "attachment") do %>
+    Download  
+    <%= user_upload.name %>
+  <% end %>
+</div>
