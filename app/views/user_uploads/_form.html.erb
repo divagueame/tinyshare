@@ -1,24 +1,22 @@
-<%= turbo_frame_tag 'user_upload_form' do %>
-  <%= form_with(model: user_upload) do |form| %>
-    <% if user_upload.errors.any? %>
-      <div style="color: red">
-        <h2><%= pluralize(user_upload.errors.count, "error") %> prohibited this user_upload from being saved:</h2>
+<%= form_with(model: user_upload) do |form| %>
+  <% if user_upload.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user_upload.errors.count, "error") %> prohibited this user_upload from being saved:</h2>
 
-        <ul>
-          <% user_upload.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div>
-      <%= form.label :user_file, style: "display: none" %>
-      <%= form.file_field :user_file %>
-    </div>
-
-    <div>
-      <%= form.submit %>
+      <ul>
+        <% user_upload.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
+
+  <div>
+    <%= form.label :user_file, style: "display: none" %>
+    <%= form.file_field :user_file %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
 <% end %>

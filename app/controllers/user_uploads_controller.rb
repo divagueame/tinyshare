@@ -19,8 +19,8 @@ class UserUploadsController < ApplicationController
 
     respond_to do |format|
       if @user_upload.save
-        format.html { redirect_to user_upload_url(@user_upload), notice: 'User upload was successfully created.' }
-        # format.turbo { redirect_to user_upload_url(@user_upload), notice: 'User upload was successfully created.' }
+        # format.html { redirect_to user_upload_url(@user_upload), notice: 'User upload was successfully created.' }
+        format.turbo_stream
       else
         format.html { render :new, status: :unprocessable_entity }
       end

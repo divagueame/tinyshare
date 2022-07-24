@@ -1,0 +1,3 @@
+ <%= turbo_stream.append "user_uploads" do %>
+  <%= render partial: "user_upload", locals: { user_upload: @user_upload} %>
+<% end %>
