@@ -1,3 +1,5 @@
- <%= turbo_stream.append "user_uploads" do %>
-  <%= render partial: "user_upload", locals: { user_upload: @user_upload} %>
+ <%= turbo_stream.append "user_uploads", partial: "user_uploads/user_upload", locals: { user_upload: @user_upload} %>
+ 
+ <%= turbo_stream.update UserUpload.new do %>
+    <%= render "form", user_upload: UserUpload.new %>
 <% end %>

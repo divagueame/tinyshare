@@ -2,6 +2,12 @@
 
 <h1>TinyShare</h1>
 
+  <%= turbo_frame_tag @user_upload do %>
+    <%= render "form", user_upload: @user_upload %>
+  <% end %>
+
+
+<br>
 <div id="user_uploads">
   <% @user_uploads.each do |user_upload| %>
     <%= render user_upload %>
@@ -9,7 +15,3 @@
 </div>
 
 <%= link_to "New upload", new_user_upload_path, style: "display: none"%>
-<br>
-<div id="chiki">
-  <%= render "form", user_upload: @new_user_upload %>
-</div>

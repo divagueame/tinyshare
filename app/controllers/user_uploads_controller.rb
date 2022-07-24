@@ -3,7 +3,7 @@ class UserUploadsController < ApplicationController
 
   def index
     @user_uploads = UserUpload.all
-    @new_user_upload = UserUpload.new
+    @user_upload = UserUpload.new
   end
 
   def show; end
